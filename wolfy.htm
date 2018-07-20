@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head >
+<meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>How to Be an &quot;Alpha Male,&quot; According to Wolves | Reader&#039;s Digest</title><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta property="fb:pages" content="45598662525" />
+<!-- This site is optimized with the Yoast SEO Premium plugin v6.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The wolves of Yellowstone have some surprising lessons on being a man."/>
+<link rel="canonical" href="https://www.rd.com/advice/relationships/alpha-male-wolves/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Be an &quot;Alpha Male,&quot; According to Wolves | Reader&#039;s Digest" />
+<meta property="og:description" content="The wolves of Yellowstone have some surprising lessons on being a man." />
+<meta property="og:url" content="https://www.rd.com/advice/relationships/alpha-male-wolves/" />
+<meta property="og:site_name" content="Reader&#039;s Digest" />
+<meta property="article:tag" content="Animals" />
+<meta property="article:tag" content="Relationship Advice" />
+<meta property="article:section" content="Relationships" />
+<meta property="article:published_time" content="2016-12-01T15:00:48-04:00" />
+<meta property="article:modified_time" content="2016-11-28T13:07:24-04:00" />
+<meta property="og:updated_time" content="2016-11-28T13:07:24-04:00" />
+<meta property="og:image" content="https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A.jpg" />
+<meta property="og:image:width" content="2400" />
+<meta property="og:image:height" content="1600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="The wolves of Yellowstone have some surprising lessons on being a man." />
+<meta name="twitter:title" content="How to Be an &quot;Alpha Male,&quot; According to Wolves | Reader&#039;s Digest" />
+<meta name="twitter:site" content="@readersdigest" />
+<meta name="twitter:image" content="https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A.jpg" />
+<meta name="twitter:creator" content="@readersdigest" />
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel='dns-prefetch' href='//assets.adobedtm.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link rel='dns-prefetch' href='//m.addthisedge.com' />
+<link rel='dns-prefetch' href='//www.gstatic.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//js-agent.newrelic.com' />
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//m.addthis.com' />
+<link rel="alternate" type="application/rss+xml" title="Reader&#039;s Digest &raquo; Feed" href="https://www.rd.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Reader&#039;s Digest &raquo; Comments Feed" href="https://www.rd.com/comments/feed/" />
+
+<script type="text/javascript">
+var digitalData = {"page":{"theme":"rdus-child","sitename":"rd","pageName":"rd:Relationships:Advice:article:Think You Know What \"Alpha Male\" Means? These Wolves Will Prove You Wrong","content":{"contentName":"Think You Know What \"Alpha Male\" Means? These Wolves Will Prove You Wrong","tmbiBrand":"no brand","magazineIssue":"december-2016","contentID":232921,"wpContentID":"","contentType":"article","category":"relationships","tags":"Animals, Relationship Advice","contentCost":"0","publishedDate":"2016-12-01","modifiedDate":"2016-11-28","image":{"licensorName":"not available","credits":"Tim Flach\/Getty Images"},"author":"Carl Safina","authorRole":"TMBI Content Licensee"},"subCategory":"Relationships","subsubCategory":"Advice","category":{"subCategory":"Relationships","subsubCategory":"Advice","pageType":"relationships"}},"ab":{"testing":"redesign:design_v1"}};
+</script>
+<script type="text/javascript" src="//assets.adobedtm.com/c30a7f4dba5fcf320694d4fefeabd1cf4867f8ed/satelliteLib-247ea3eef67c38bd658d7bf9d4d87aa2e09a9dc9.js"></script>
+<link rel='stylesheet' id='opinionstage-style-css'  href='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/opinionstage-style-common.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='opinionstage-font-style-css'  href='https://www.rd.com/wp-content/plugins/social-polls-by-opinionstage/opinionstage-font.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='rdus-child-theme-css'  href='https://www.rd.com/wp-content/themes/rdus-child/above-the-fold.min.css?ver=2.4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-styles-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='listicle-editor-styles-css'  href='https://www.rd.com/wp-content/plugins/rd-listicle/css/editor-style-listicle.css?ver=1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='newsletter-css'  href='https://www.rd.com/wp-content/plugins/rd-newsletters/css/newsletter.css?ver=3.6' type='text/css' media='all' />
+<link rel='stylesheet' id='spu-public-css-css'  href='https://www.rd.com/wp-content/plugins/popups/public/assets/css/public.css?ver=1.4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rdus-child-fonts-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900&#038;ver=2.4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://www.rd.com/wp-includes/css/dashicons.min.css?ver=4.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='elasticpress-facets-css'  href='https://www.rd.com/wp-content/plugins/elasticpress/features/facets/assets/css/facets.min.css?ver=2.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='rdu-addthis-style-css'  href='https://www.rd.com/wp-content/plugins/tmbi-social-share/css/rdu-addthis-style.css?ver=1.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='spup-public-css-css'  href='https://www.rd.com/wp-content/plugins/popups-premium/public/assets/css/public.css?ver=1.6' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.rd.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/cookie-controller/js/cookie.min.js?ver=1.2'></script>
+<script async type='text/javascript' src='//js-sec.indexww.com/ht/p/184414-36669666691496.js?ver=1.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/jquery-plugins/jquery.inview.custom.min.js?ver=1.2'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-apstag-ads/js/amazon-apstag-lib.js?ver=1.1.9'></script>
+<script async type='text/javascript' src='https://www.googletagservices.com/tag/js/gpt.js?ver=0.2.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rdu_ad_data = {"property":"6178","siteId":"rdg","pageType":"article","contentID":"232921","pg":"post-232921","category":"relationships","header_bidders_timeout":"2500","overrides":{"use_overridden_ad_unit_path":"1"},"lotame_id":"LOTCC_10234"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rdu-gpt-ads/js/rdu-gpt-header.js?ver=0.2.4'></script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-apstag-ads/js/amazon-apstag.js?ver=1.1.9'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-nativo/js/nativo-ajax.js?ver=1.1'></script>
+<script type='text/javascript' src='//s.ntv.io/serve/load.js?ver=20150830'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-parsely-multisite/js/dynamic-tracker.js?ver=1.0.4'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-taboola/js/rd-taboola-loader.js?ver=0.2.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/genesis/lib/js/skip-links.js?ver=4.9.6'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/rdus-child/js/script.min.js?ver=2.4.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var site_name = {"is_rd":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-social-share/js/addthis-config.js?ver=1.2.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var fb_app_id = {"app_id":"1460464994268018"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/fb-sdk/js/fb-sdk.js?ver=1.3'></script>
+<link rel='https://api.w.org/' href='https://www.rd.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.rd.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.rd.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.6" />
+<link rel='shortlink' href='https://www.rd.com/?p=232921' />
+<link rel="alternate" type="application/json+oembed" href="https://www.rd.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Falpha-male-wolves%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.rd.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.rd.com%2Fadvice%2Frelationships%2Falpha-male-wolves%2F&#038;format=xml" />
+
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','gaplusu');
+
+                                                            gaplusu('create', 'UA-17041328-1', 'auto');
+                    
+                                                                gaplusu('require', 'displayfeatures');
+                    
+                    gaplusu('send', 'pageview');
+                
+                            </script>
+
+		<meta property="fb:app_id" content="1460464994268018" /><script type="text/javascript">(function(g,v,w,p,U,H,m,I){function x(){return~~(100*Math.random())-~~(100*Math.random())}function y(a){var b;b=btoa(""+(new Date).getTime()).replace(/=/g,"").split("").sort(x).join("");var c=~~(Math.random()*(b.length-4))+2;b=b.substr(0,c)+"\x3d"+b.substr(c+1);return-1===a.indexOf("?")?a+"?"+b:a+"\x26"+b}function V(a,b){if(!a)return[];for(var c=[],d=0;d<a.length;d+=1){var e=a[d];"img"===(e.tagName||"").toLowerCase()?e.src&&("naturalHeight"in e?0<e.naturalHeight&&c.push(e.src):c.push(e.src)):"source"===(e.tagName||"").toLowerCase()&&e.srcset&&e.srcset.split(",").a(function(b){(b=b.trim().split(" ")[0].trim())&&c.push(b)})}return c.sort(x).concat(b)}function J(a,b,c,d){if(b>a.length-1)d();else{var e=new Image;e.onload=function(){c(a[b])};e.onerror=function(){J(a,b+1,c,d)};e.src=y(a[b])}}function z(a,b,c,d,e,f){var k=new Image;k.onload=function(){var k=a,g=b,h=c,m=d,n=e+1,l=f;l>=K?h(n,l):n+l===A?g(n,l):z(k,g,h,m+1,n,l)};k.onerror=function(){var k=a,g=b,h=c,m=d,n=e,l=f+1;l>=K?h(n,l):n+l===A?g(n,l):z(k,g,h,m+1,n,l)};k.src=y(a)}function X(a,b){J(a,0,function(a){z(a,function(a,c){b(!1,Y,a,c)},function(a,c){b(!0,Z,a,c)},0,0,0)},function(){b(!0,aa,-1,-1)})}function ba(a,b){var c=new XMLHttpRequest;c.open("GET",a,!0);c.onreadystatechange=function(){if(4===c.readyState){var a;a:{try{var e=JSON.parse(c.responseText);a=Array.isArray(e)?e:e.data||[];break a}catch(k){}a=[]}if(!a||0===a.length)return b(Error("Failed to check API status"),!1);for(var e=!0,f=0;f<a.length;f+=1)e=e&&!!a[f].healthy;return b(null,e)}};c.send()}function ca(a){var b=a.document.createElement("iframe");b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.top="-100px";b.style.left="-100px";a.document.body.appendChild(b);return b}function da(a,b){var c=a.document.createElement("div");c.setAttribute("class",ea);c.setAttribute("style",fa);a.document.body.appendChild(c);var d=0,e=setInterval(function(){try{var f;a:{var k=a;if(null!==k.document.body.getAttribute("abp")||null===c.offsetParent||0===c.offsetHeight||0===c.offsetLeft||0===c.offsetTop||0===c.offsetWidth||0===c.clientHeight||0===c.clientWidth)f=!0;else{if(void 0!==k.getComputedStyle){var g=k.getComputedStyle(c);if(g&&("none"===g.getPropertyValue("display")||"hidden"===g.getPropertyValue("visibility"))){f=!0;break a}}f=!1}}f?(clearInterval(e),b(null,!0)):(d+=1,d>=ga&&(clearInterval(e),b(null,!1)))}catch(W){clearInterval(e),b(W,!1)}},50)}function L(a,b,c,d){void 0===c&&(c=0);var e=a.document.createElement("script");e.onload=function(){d(!1)};e.onerror=function(){2<=c?d(!0):L(a,b,c+1,d)};e.async=!0;e.src=y(b);a.document.body.appendChild(e)}function ha(a,b){var c=["//d1zatounuylvwg.cloudfront.net/abw.js","//pagead2.googlesyndication.com/pagead/show_ads.js","//s0.2mdn.net/instream/video/client.js"],d=0,e=!1;c.forEach(function(f){try{L(a,f,0,function(a){d+=1;!e&&a&&(e=!0,b(null,!0));e||d!==c.length||(e=!0,b(null,!1))})}catch(k){d+=1,e||d!==c.length||(e=!0,b(k,!1))}})}function ia(a,b){function c(a,c){!f&&c?(f=!0,b(null,c)):(e+=1,2===e&&(f||(f=!0,b(a,c)),d.parentElement.removeChild(d)))}var d=ca(a),e=0,f=!1;ha(d.contentWindow,c);da(d.contentWindow,c)}function ja(){for(var a=64,b=[],c=0;1024>c;c++)b[c]=Math.floor(Math.random()*a);return b}function B(a,b){b=b?ka:la;a=g.btoa(a).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");for(var c="",d=0;d<a.length;d++)var e=b[d%4],f=a.charAt(d),f=C.indexOf(f),c=c+C.charAt((f+e)%64);for(d=0;4>d;d++)c+=C.charAt(b[d]);return c}function M(a){for(var b=~~((new Date).getTime()/36E5),c=[],d=0;1024>d;d+=1)c.push((b+d)%a);return c}function ma(a,b){("onLine"in navigator?navigator.onLine:1)?ba(p+N(g.location.href,"/"+B("h\x3d"+I+"\x26_\x3d"+~~((new Date).getTime()/36E5),!0)),function(c,d){c?h(O,c.message):d?ia(g,function(c,d){c?h(P,na,a,b):d?h(Q,q+" blocked",a,b):h(P,oa,a,b)}):h(O,pa)}):h(r,t)}function h(a,b,c,d){a={code:a,message:b,block_detection:{num_requests:0}};a.code===Q&&(a.site_disabled=!0);0<c&&(a.block_detection.success=c,a.block_detection.num_requests+=c);0<d&&(a.block_detection.fail=d,a.block_detection.num_requests+=d);D("error",a)}function D(a,b,c,d){d||(d=U);var e=g.location.href;b.bid_request={id:"-1",site:{page:e}};b.publisher_uuid=H;b.site_uuid=m;b.js_app_cdn_url=q;b.bootstrap_version=w;d+="/v1/log/";try{d+=a+"?"+B(JSON.stringify(b))}catch(f){d+="exception?e\x3d"+encodeURIComponent(f.message)+"\x26u\x3d"+encodeURIComponent(e)+"\x26bv\x3d"+w+"\x26p\x3d"+H+"\x26s\x3d"+m}e=new Image;c||(e.onerror=function(){D(a,b,1,p)});e.src=d;-1<"".indexOf("1")&&console.error(a,b)}function E(a,b){try{Object.defineProperty(g||{},a,{value:b,writable:!1,configurable:!1,enumerable:!1})}catch(c){}return g[a]}function R(a){var b=v.querySelectorAll("img,picture source");F=V(b,qa);0===F.length?a<ra?setTimeout(function(){R(a+1)},sa):h(r,t):X(F,function(a,b,e,f){a?h(r,t,e,f):G(e,f)})}function G(a,b){var c=v.createElement("script");c.async=!0;0===a+b?c.onerror=function(){("onLine"in navigator?navigator.onLine:1)?R(0):h(r,t)}:a+b===A?c.onerror=function(){G(a,b+1)}:(q=p+"/"+m+".js"+(""?"?"+"":""),c.onerror=function(){ma(a,b)});c.src=q;var d=v.querySelector("script");d.parentNode.insertBefore(c,d)}if("http:"===g.location.protocol||"https:"===g.location.protocol){var K=2,A=5,Y="network was successful",Z="error network is flaky",aa="error network is down",ea="pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links",fa="width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;",ga=5;M(32);var C="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",la=ja(),ka=M(64),N=0||function(a,b){return b},q=p+N(g.location.href,"/"+B("j\x3d"+I+"\x26_\x3d"+~~((new Date).getTime()/36E5),!0))+(""?"?"+"":""),sa=100,ra=20,t="network down",r="FLAKY_CONNECTION",Q="BLOCKED_BY_ADBLOCK",O="SERVER_DOWN",pa="SERVER may be partially down",P="ADBLOCK_MISS",na="Adblock detection errored out",oa="Adblock miss",u=m+"-cmd",F,qa="apple.com facebook.com linkedin.com google.com microsoft.com adblockplus.org".split(" ").sort(x);E(m+"-bs",w);var S=[];E(u,S);var u=E("pAPI",function(a,b){S.push([a,b])}),T=[];u.handlers=T;u.ready=function(a){T.push(a)};D("event",{type:"BOOTLOADER_LOADED"});G(0,0)}})(window,document,"ea909ecea4b6a28b1611b68a15193340ae5b5854","//d1ttkkg1g5d4bm.cloudfront.net","https://168logger.com","6b1766fa-32ee-4e82-89bd-c62f0362c44f","43ba1ee4-56cf-4beb-ba4c-0c13ffe024c1","161");</script>	<style type="text/css">
+		.flag-bg {
+			background-color: #c62d2d;
+		}
+	</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+<link rel="amphtml" href="https://www.rd.com/advice/relationships/alpha-male-wolves/amp/" />
+<script type="application/ld+json">
+{
+    "@context": "https:\/\/schema.org",
+    "@type": "BlogPosting",
+    "headline": "Think You Know What \"Alpha Male\" Means? These Wolves Will Prove You Wrong",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/www.rd.com\/advice\/relationships\/alpha-male-wolves\/"
+    },
+    "description": "Tim Flach\/Getty Images If you watch wolves, It\u2019s hard to escape the conclusion that perhaps no two species are more alike behaviorally than wolves and humans. Living as we do in families, we can easily recognize the social structures and status quests in wolf packs. No wonder Native Americans recognized in wolves a sibling spirit. [&hellip;]",
+    "datePublished": "2016-12-01",
+    "dateModified": "2016-11-28",
+    "author": [
+        {
+            "@type": "Person",
+            "name": "Carl Safina"
+        }
+    ],
+    "image": {
+        "@type": "ImageObject",
+        "url": "https:\/\/www.rd.com\/wp-content\/uploads\/2016\/11\/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A.jpg",
+        "height": 1600,
+        "width": 2400
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Reader&#039;s Digest",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/rd.com\/wp-content\/themes\/rdus-child\/images\/RD_Logo_OneLine_60x335.png",
+            "width": 335,
+            "height": 60
+        }
+    }
+}
+</script>
+<meta name="pageName" content = "Think You Know What "Alpha Male" Means? These Wolves Will Prove You Wrong">
+<meta name="description" content = "The wolves of Yellowstone have some surprising lessons on being a man.">
+<meta name="contentId" content = "232921">
+<link rel="icon" href="https://www.rd.com/wp-content/uploads/2016/06/cropped-rd_favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.rd.com/wp-content/uploads/2016/06/cropped-rd_favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.rd.com/wp-content/uploads/2016/06/cropped-rd_favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.rd.com/wp-content/uploads/2016/06/cropped-rd_favicon-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+		</style>
+	</head>
+<body class="post-template-default single single-post postid-232921 single-format-standard custom-background rdus-markup rd-styleguide header-full-width content-sidebar"><div class="site-container"><section><span class="screen-reader-text">Skip links</span><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li><li><a href="#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li><li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul></section>
+	<header class="sticky-header" role="banner">
+		<div class="sticky-container">
+			<div class="sticky-ham-menu">
+				<a id="sticky-ham-link" class="ham-menu-toggle"><i class="sticky-ham-toggle fa fa-bars"></i></a>
+			</div>
+			<div class="sticky-logo">
+				<a data-analytics-metrics='{"link_name" :"home","link_module" :"top header","page_template" :"home"}' class="sticky-sm-logo" href="https://www.rd.com/" title="Reader&#039;s Digest" rel="home">
+					<img src="https://www.rd.com/wp-content/themes/rdnap/img/mobile-logo-full.png" />
+				</a>
+				<a data-analytics-metrics='{"link_name" :"home","link_module" :"top header","page_template" :"home"}' class="sticky-md-logo" href="https://www.rd.com/" title="Reader&#039;s Digest" rel="home">
+					<img src="https://www.rd.com/wp-content/themes/rdnap/img/medium-logo.png" />
+				</a>
+			</div>
+							<div class="sticky-title single">
+					<p>
+						Think You Know What &#8220;Alpha Male&#8221; Means? These Wolves Will Prove You Wrong					</p>
+				</div>
+						<div class="sticky-cmu-header">
+					<div class="links">
+		<div class="banner-img">
+			
+			<a class="flag-bg" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=212947&cds_response_key=IVGADU101">
+					<span>
+						Get The Magazine					</span>
+			</a>
+			<div class="chevron"></div>
+
+		</div>
+
+								
+			
+				<a class="text-link" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=207900&cds_response_key=IT7ADU110">Subscribe</a>
+
+											
+			
+				<a class="text-link" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=207900&cds_response_key=IT7ADU110">Give a GIft</a>
+
+											
+			
+				<a class="text-link" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=207900&cds_response_key=IT7ADU110">Large Print Edition</a>
+
+						</div>
+	<div class="cover-img">
+				
+									<a target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=212947&cds_response_key=IVGADU101">
+						<img src="https://www.rd.com/wp-content/uploads/2018/01/RDMagCover_330X450_forSEM-1.jpg">
+							</a>
+						</div>
+				</div>
+		</div>
+
+		<!-- Render Sub Cat Nav -->
+		<div class="sticky-subcat-nav">
+					</div>
+	</header>
+	<header class="site-header"><div class="wrap">	<div class="header-container">
+		<div class="social-header">
+			<h5>Follow RD:</h5>
+				<ul>
+		<li><a data-analytics-metrics='{"link_name":"facebook","link_module":"top header","page_template":"Facebook","link_pos":"social"}' class="header-facebook" href="https://www.facebook.com/ReadersDigest" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+		<li><a data-analytics-metrics='{"link_name":"twitter","link_module":"top header","page_template":"twitter","link_pos":"social"}' class="header-twitter" href="https://twitter.com/readersdigest" target="_blank"><i class="fa fa-twitter"></i></a></li>
+		<li><a data-analytics-metrics='{"link_name":"pinterest","link_module":"top header","page_template":"pinterest","link_pos":"social"}' class="header-pinterest" href="https://pinterest.com/readersdigest/" target="_blank"><i class="fa fa-pinterest-p"></i></a></li>
+		<li><a data-analytics-metrics='{"link_name":"youtube","link_module":"top header","page_template":"youtube","link_pos":"social"}' class="header-youtube" href="https://www.youtube.com/readersdigest" target="_blank"><i class="fa fa-youtube"></i></a></li>
+		<li><a data-analytics-metrics='{"link_name":"instagram","link_module":"top header","page_template":"instagram","link_pos":"social"}' class="header-instagram" href="https://instagram.com/readersdigest" target="_blank"><i class="fa fa-instagram"></i></a></li>
+		<li><a data-analytics-metrics='{"link_name":"newsletter signup","link_module":"top header","page_template":"newsletter signup","link_pos":"social"}' class="header-newslettersignup" href="https://www.rd.com/newsletters"><i class="fa fa-envelope"></i></a></li>
+	</ul>
+
+		</div>
+		<div class="site-title">
+			<a href="https://www.rd.com/" data-analytics-metrics='{"link_name":"home","link_module":"top header", "page_template":"home"}' >
+				<img class="desktop" src="https://www.rd.com/wp-content/themes/rdus-child/images/rd-logo-white.svg" alt="Reader's Digest Logo">
+				<img class="fixed-logo" src="https://www.rd.com/wp-content/themes/rdus-child/images/rd-logo-red.svg" alt="Reader's Digest Logo">
+				<img class="mobile" src="https://www.rd.com/wp-content/themes/rdus-child/images/rd-logo-square.svg" alt="Reader's Digest Logo">
+			</a>
+		</div>
+		<div class="cmu-header">
+				<div class="links">
+		<div class="banner-img">
+			
+			<a class="flag-bg" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=212947&cds_response_key=IVGADU101">
+					<span>
+						Get The Magazine					</span>
+			</a>
+			<div class="chevron"></div>
+
+		</div>
+
+								
+			
+				<a class="text-link" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=207900&cds_response_key=IT7ADU110">Subscribe</a>
+
+											
+			
+				<a class="text-link" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=207900&cds_response_key=IT7ADU110">Give a GIft</a>
+
+											
+			
+				<a class="text-link" target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=207900&cds_response_key=IT7ADU110">Large Print Edition</a>
+
+						</div>
+	<div class="cover-img">
+				
+									<a target="_blank" rel="noopener" href="https://order.readersdigest.com/servlet/OrdersGateway?cds_mag_code=RDA&cds_page_id=212947&cds_response_key=IVGADU101">
+						<img src="https://www.rd.com/wp-content/uploads/2018/01/RDMagCover_330X450_forSEM-1.jpg">
+							</a>
+						</div>
+			</div>
+	</div>
+<div class="rdus-mobile-nav"><div class="container">		<section class="searchbox-wrapper">
+			<form class="searchbox" method="get" action="https://www.rd.com/">
+				<input type="search" placeholder="search here..." name="s" class="searchbox-input">
+				<button type="submit" class="searchbox-submit desktop">Search</button>
+				<button type="submit" class="searchbox-submit fa fa-search mobile"></button>     
+			</form>
+		</section>
+		<section id="nav_menu-5" class="widget widget_nav_menu"><div class="widget-wrap"><h3 class="widgettitle widget-title">Categories</h3>
+<div class="menu-nav-main-container"><ul id="menu-nav-main" class="menu"><li id="menu-item-59934" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a data-analytics-metrics='{"link_name":"Health","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/health/">Health</a>
+<ul class="sub-menu">
+	<li id="menu-item-120486" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Health:Diabetes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/diabetes/">Diabetes</a></li>
+	<li id="menu-item-59937" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Diet &amp; Weight Loss","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/diet-weight-loss/">Diet &#038; Weight Loss</a></li>
+	<li id="menu-item-59933" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Everyday Wellness","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/wellness/">Everyday Wellness</a></li>
+	<li id="menu-item-59940" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Healthy Eating","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/healthy-eating/">Healthy Eating</a></li>
+	<li id="menu-item-59939" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Health Care","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/healthcare/">Health Care</a></li>
+	<li id="menu-item-59938" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Fitness","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/fitness/">Fitness</a></li>
+	<li id="menu-item-59936" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Conditions","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/conditions/">Conditions</a></li>
+	<li id="menu-item-228841" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Beauty","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/beauty/">Beauty</a></li>
+</ul>
+</li>
+<li id="menu-item-49567" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a data-analytics-metrics='{"link_name":"Food","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/food/">Food</a>
+<ul class="sub-menu">
+	<li id="menu-item-92880" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Food:Food Fun &amp; News","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/food/fun/">Food Fun &#038; News</a></li>
+	<li id="menu-item-92881" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Food:Recipes &amp; Cooking","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/food/recipes-cooking/">Recipes &#038; Cooking</a></li>
+</ul>
+</li>
+<li id="menu-item-49662" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children"><a data-analytics-metrics='{"link_name":"Advice","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/advice/">Advice</a>
+<ul class="sub-menu">
+	<li id="menu-item-57249" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Parenting","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/parenting/">Parenting</a></li>
+	<li id="menu-item-88579" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Pets","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/pets/">Pets</a></li>
+	<li id="menu-item-66657" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Home","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/home/">Home</a></li>
+	<li id="menu-item-57251" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a data-analytics-metrics='{"link_name":"Advice:Relationships","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/relationships/">Relationships</a></li>
+	<li id="menu-item-57250" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Saving Money","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/saving-money/">Saving Money</a></li>
+	<li id="menu-item-49643" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Travel","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/travel/">Travel</a></li>
+	<li id="menu-item-57252" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Work &amp; Career","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/work-career/">Work &#038; Career</a></li>
+</ul>
+</li>
+<li id="menu-item-144129" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Culture","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/culture/">Culture</a></li>
+<li id="menu-item-49646" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a data-analytics-metrics='{"link_name":"True Stories","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/true-stories/">True Stories</a>
+<ul class="sub-menu">
+	<li id="menu-item-78205" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"True Stories:Share Your 100-Word Story","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/stories/">Share Your 100-Word Story</a></li>
+	<li id="menu-item-49641" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Love Stories","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/love/">Love Stories</a></li>
+	<li id="menu-item-49640" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Inspiring Stories","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/inspiring/">Inspiring Stories</a></li>
+	<li id="menu-item-49642" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Amazing Survival Stories","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/survival/">Amazing Survival Stories</a></li>
+</ul>
+</li>
+<li id="menu-item-65988" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a data-analytics-metrics='{"link_name":"Jokes","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/jokes/">Jokes</a>
+<ul class="sub-menu">
+	<li id="menu-item-92142" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Knock-Knock Jokes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/knock-knock/">Knock-Knock Jokes</a></li>
+	<li id="menu-item-92143" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Corny Jokes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/corny/">Corny Jokes</a></li>
+	<li id="menu-item-92144" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Funny One-Liners","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/one-liners/">Funny One-Liners</a></li>
+	<li id="menu-item-65991" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Riddles","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/riddles/">Riddles</a></li>
+	<li id="menu-item-65989" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:All Funny Jokes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/">All Funny Jokes</a></li>
+	<li id="menu-item-65990" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Cartoons","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/cartoons/">Cartoons</a></li>
+	<li id="menu-item-117768" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Funny Stuff","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/funny-stuff/">Funny Stuff</a></li>
+	<li id="menu-item-80085" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Submit Your Joke","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/submit-joke/">Submit Your Joke</a></li>
+	<li id="menu-item-324267" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Cartoon Submissions","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/cartoon-submissions/">Cartoon Submissions</a></li>
+</ul>
+</li>
+<li id="menu-item-85136" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a data-analytics-metrics='{"link_name":"Games","link_module":"navigation","link_pos":"main navigation"}' href="http://games.rd.com">Games</a>
+<ul class="sub-menu">
+	<li id="menu-item-51251" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Games:Free Online Games","link_module":"navigation","link_pos":"drop down navigation"}' href="http://games.rd.com">Free Online Games</a></li>
+	<li id="menu-item-51252" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Games:Sweepstakes and Prizes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/sweepstakes-prizes/">Sweepstakes and Prizes</a></li>
+</ul>
+</li>
+<li id="menu-item-225934" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag"><a data-analytics-metrics='{"link_name":"Contests","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/sweepstakes-prizes/">Contests</a></li>
+<li id="menu-item-49696" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Shop","link_module":"navigation","link_pos":"main navigation"}' href="http://www.readersdigeststore.com/">Shop</a></li>
+</ul></div></div></section>
+<section id="nav_menu-6" class="widget widget_nav_menu"><div class="widget-wrap"><h3 class="widgettitle widget-title">Follow RD:</h3>
+<div class="menu-footer-social-container"><ul id="menu-footer-social" class="menu"><li id="menu-item-397208" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"facebook","link_module":"follow us","link_pos":"social"}' href="https://www.facebook.com/ReadersDigest"><i class="fa fa-facebook-square"></i><span>Facebook</span></a></li>
+<li id="menu-item-397211" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"twitter","link_module":"follow us","link_pos":"social"}' href="https://twitter.com/readersdigest"><i class="fa fa-twitter"></i><span>Twitter</span></a></li>
+<li id="menu-item-397212" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"pinterest","link_module":"follow us","link_pos":"social"}' href="https://www.pinterest.com/readersdigest/"><i class="fa fa-pinterest"></i><span>Pinterest</span></a></li>
+<li id="menu-item-397215" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"youtube","link_module":"follow us","link_pos":"social"}' href="https://www.youtube.com/readersdigest"><i class="fa fa-youtube"></i><span>YouTube</span></a></li>
+<li id="menu-item-397217" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"instagram","link_module":"follow us","link_pos":"social"}' href="https://instagram.com/readersdigest"><i class="fa fa-instagram"></i><span>Instagram</span></a></li>
+<li id="menu-item-397221" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"newsletter signup","link_module":"follow us","link_pos":"social"}' href="https://www.rd.com/newsletters"><i class="fa fa-envelope"></i><span>Newsletters</span></a></li>
+</ul></div></div></section>
+<section id="custom_html-6" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h3 class="widgettitle widget-title">Subscribe to Print:</h3>
+<div class="textwidget custom-html-widget"><div class="footer-text-container">
+
+<span class="footer-lead">Get our Best Deal!</span>
+<p class="footer-copy">Get a print subscription to Reader's Digest and instantly enjoy free digital access on any device.</p>
+
+</div>
+<img class="footer-cover" src="https://www.rd.com/wp-content/uploads/2018/01/RDMagCover_330X450_forSEM-1.jpg" />
+<div class="footer-form"><form id="" class="footer-form" action="https://w1.buysub.com/servlet/PrePopGateway" method="post" target="_blank"><label>Full Name</label>
+<input id="cds_mag_code" name="cds_mag_code" type="hidden" value="RDA"> <input id="cds_page_id" name="cds_page_id" type="hidden" value="212947"> <input id="cds_response_key" name="cds_response_key" type="hidden" value="IVGMDU101"> <input name="cds_country" type="hidden" value="United States">
+<input maxlength="24" name="cds_name" size="20" type="text" value="" placeholder="First and Last" />
+<label>Email</label>
+
+<input maxlength="50" name="cds_email" size="20" type="text" value="" placeholder="you@example.com" />
+<input name="send" type="submit" value="Subscribe &amp; Checkout" data-analytics-metrics="{&quot;link_name&quot; :&quot;subscribe &amp; checkout&quot;,&quot;link_module&quot; :&quot;subscribe footer&quot;,&quot;page_template&quot; :&quot;subscribe &amp; checkout&quot;}" />
+
+</form></div>
+<p class="footer-next-info">Next: Provide address &amp; payment</p></div></div></section>
+<section id="nav_menu-8" class="widget widget_nav_menu"><div class="widget-wrap"><h3 class="widgettitle widget-title">About RD:</h3>
+<div class="menu-footer-left-menu-container"><ul id="menu-footer-left-menu" class="menu"><li id="menu-item-397190" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"LifeRich Publishing","link_module":"footer","link_pos":"footer"}' href="https://www.liferichpublishing.com/">LifeRich Publishing</a></li>
+<li id="menu-item-463898" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"One Main Financials Services","link_module":"footer","link_pos":"footer"}' href="https://www.onemainfinancial.com/partners/360b65fa?CSCALD=18102&amp;TRKCD=homepage&amp;utm_medium=Affinity">One Main Financials Services</a></li>
+<li id="menu-item-397191" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Media Kit","link_module":"footer","link_pos":"footer"}' href="https://www.rd.com/media-kit">Media Kit</a></li>
+<li id="menu-item-397194" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Contact Us","link_module":"footer","link_pos":"footer"}' href="https://www.rd.com/contact-us">Contact Us</a></li>
+<li id="menu-item-397195" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Customer Care","link_module":"footer","link_pos":"footer"}' href="https://w1.buysub.com/pubs/RD/RDA/index.jsp?cds_page_id=69616&amp;cds_mag_code=RDA">Customer Care</a></li>
+</ul></div></div></section>
+<section id="custom_html-8" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div class="hamburger-footer">
+    <div class="creds">
+        ©2018 TRUSTED MEDIA BRANDS, INC<a data-analytics-metrics='{"link_name" :"terms & conditions","link_module" :"footer","page_template" :"terms & conditions"}' href="https://www.rd.com/terms-of-use/" target="_blank">Terms &amp; Conditions</a><a data-analytics-metrics='{"link_name" :"your privacy policy","link_module" :"footer","page_template" :"your privacy policy"}' href="https://www.trustedmediabrands.com/privacy-policy/" target="_blank">NEW - Privacy Policy
+</a>
+<a data-analytics-metrics="{&quot;link_name&quot; :&quot;your ca privacy rights&quot;,&quot;link_module&quot; :&quot;footer&quot;,&quot;page_template&quot; :&quot;your ca privacy rights&quot;}" href="https://www.trustedmediabrands.com/privacy-policy/#california" target="_blank">Your CA Privacy Rights</a>
+<a data-analytics-metrics="{&quot;link_name&quot; :&quot;about ads&quot;,&quot;link_module&quot; :&quot;footer&quot;,&quot;page_template&quot; :&quot;about ads&quot;}" href="https://www.trustedmediabrands.com/privacy-policy/#advertising" target="_blank">About Ads</a>
+    </div>
+    <div class="tmb-sites">
+        <span class="our-sites">Our Websites:</span> <span class="rd-link">Reader's Digest</span> <span class="pipe">|</span> 
+        <a data-analytics-metrics='{"link_name" :"taste of home","link_module" :"footer"}' href="https://tasteofhome.com/" target="_blank">Taste of Home</a> <span class="pipe">|</span> <a data-analytics-metrics='{"link_name" :"family handyman","link_module" :"footer"}' href="https://familyhandyman.com/" target="_blank">The Family Handyman</a> <span class="pipe">|</span> <a data-analytics-metrics='{"link_name" :"construction pro tips","link_module" :"footer"}' href="https://www.constructionprotips.com/" target="_blank">Construction Pro Tips</a>
+    </div>
+</div></div></div></section>
+</div></div></div></header><span class="screen-reader-text">Main navigation</span><nav class="nav-primary" id="genesis-nav-primary" aria-label="Main navigation"><div class="dt-ham"><a id="ham-link" class="ham-menu-toggle"><i class="ham-toggle fa fa-bars"></i></a></div><div class="wrap"><ul id="menu-nav-main-1" class="menu genesis-nav-menu menu-primary"><li id="menu-item-59934" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a data-analytics-metrics='{"link_name":"Health","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/health/"><span itemprop="name">Health</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-120486" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Health:Diabetes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/diabetes/"><span itemprop="name">Diabetes</span></a></li>
+	<li id="menu-item-59937" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Diet &amp; Weight Loss","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/diet-weight-loss/"><span itemprop="name">Diet &#038; Weight Loss</span></a></li>
+	<li id="menu-item-59933" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Everyday Wellness","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/wellness/"><span itemprop="name">Everyday Wellness</span></a></li>
+	<li id="menu-item-59940" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Healthy Eating","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/healthy-eating/"><span itemprop="name">Healthy Eating</span></a></li>
+	<li id="menu-item-59939" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Health Care","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/healthcare/"><span itemprop="name">Health Care</span></a></li>
+	<li id="menu-item-59938" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Fitness","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/fitness/"><span itemprop="name">Fitness</span></a></li>
+	<li id="menu-item-59936" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Conditions","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/conditions/"><span itemprop="name">Conditions</span></a></li>
+	<li id="menu-item-228841" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Health:Beauty","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/health/beauty/"><span itemprop="name">Beauty</span></a></li>
+</ul>
+</li>
+<li id="menu-item-49567" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a data-analytics-metrics='{"link_name":"Food","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/food/"><span itemprop="name">Food</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-92880" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Food:Food Fun &amp; News","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/food/fun/"><span itemprop="name">Food Fun &#038; News</span></a></li>
+	<li id="menu-item-92881" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Food:Recipes &amp; Cooking","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/food/recipes-cooking/"><span itemprop="name">Recipes &#038; Cooking</span></a></li>
+</ul>
+</li>
+<li id="menu-item-49662" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children"><a data-analytics-metrics='{"link_name":"Advice","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/advice/"><span itemprop="name">Advice</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-57249" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Parenting","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/parenting/"><span itemprop="name">Parenting</span></a></li>
+	<li id="menu-item-88579" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Pets","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/pets/"><span itemprop="name">Pets</span></a></li>
+	<li id="menu-item-66657" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Home","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/home/"><span itemprop="name">Home</span></a></li>
+	<li id="menu-item-57251" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a data-analytics-metrics='{"link_name":"Advice:Relationships","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/relationships/"><span itemprop="name">Relationships</span></a></li>
+	<li id="menu-item-57250" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Saving Money","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/saving-money/"><span itemprop="name">Saving Money</span></a></li>
+	<li id="menu-item-49643" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Travel","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/travel/"><span itemprop="name">Travel</span></a></li>
+	<li id="menu-item-57252" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Advice:Work &amp; Career","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/advice/work-career/"><span itemprop="name">Work &#038; Career</span></a></li>
+</ul>
+</li>
+<li id="menu-item-144129" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"Culture","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/culture/"><span itemprop="name">Culture</span></a></li>
+<li id="menu-item-49646" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a data-analytics-metrics='{"link_name":"True Stories","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/true-stories/"><span itemprop="name">True Stories</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-78205" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"True Stories:Share Your 100-Word Story","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/stories/"><span itemprop="name">Share Your 100-Word Story</span></a></li>
+	<li id="menu-item-49641" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Love Stories","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/love/"><span itemprop="name">Love Stories</span></a></li>
+	<li id="menu-item-49640" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Inspiring Stories","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/inspiring/"><span itemprop="name">Inspiring Stories</span></a></li>
+	<li id="menu-item-49642" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a data-analytics-metrics='{"link_name":"True Stories:Amazing Survival Stories","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/true-stories/survival/"><span itemprop="name">Amazing Survival Stories</span></a></li>
+</ul>
+</li>
+<li id="menu-item-65988" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a data-analytics-metrics='{"link_name":"Jokes","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/jokes/"><span itemprop="name">Jokes</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-92142" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Knock-Knock Jokes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/knock-knock/"><span itemprop="name">Knock-Knock Jokes</span></a></li>
+	<li id="menu-item-92143" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Corny Jokes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/corny/"><span itemprop="name">Corny Jokes</span></a></li>
+	<li id="menu-item-92144" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Funny One-Liners","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/one-liners/"><span itemprop="name">Funny One-Liners</span></a></li>
+	<li id="menu-item-65991" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Riddles","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/riddles/"><span itemprop="name">Riddles</span></a></li>
+	<li id="menu-item-65989" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:All Funny Jokes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/jokes/"><span itemprop="name">All Funny Jokes</span></a></li>
+	<li id="menu-item-65990" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Cartoons","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/cartoons/"><span itemprop="name">Cartoons</span></a></li>
+	<li id="menu-item-117768" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Funny Stuff","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/funny-stuff/"><span itemprop="name">Funny Stuff</span></a></li>
+	<li id="menu-item-80085" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Submit Your Joke","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/submit-joke/"><span itemprop="name">Submit Your Joke</span></a></li>
+	<li id="menu-item-324267" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Jokes:Cartoon Submissions","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/cartoon-submissions/"><span itemprop="name">Cartoon Submissions</span></a></li>
+</ul>
+</li>
+<li id="menu-item-85136" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a data-analytics-metrics='{"link_name":"Games","link_module":"navigation","link_pos":"main navigation"}' href="http://games.rd.com"><span itemprop="name">Games</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-51251" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Games:Free Online Games","link_module":"navigation","link_pos":"drop down navigation"}' href="http://games.rd.com"><span itemprop="name">Free Online Games</span></a></li>
+	<li id="menu-item-51252" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Games:Sweepstakes and Prizes","link_module":"navigation","link_pos":"drop down navigation"}' href="https://www.rd.com/sweepstakes-prizes/"><span itemprop="name">Sweepstakes and Prizes</span></a></li>
+</ul>
+</li>
+<li id="menu-item-225934" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag"><a data-analytics-metrics='{"link_name":"Contests","link_module":"navigation","link_pos":"main navigation"}' href="https://www.rd.com/sweepstakes-prizes/"><span itemprop="name">Contests</span></a></li>
+<li id="menu-item-49696" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Shop","link_module":"navigation","link_pos":"main navigation"}' href="http://www.readersdigeststore.com/"><span itemprop="name">Shop</span></a></li>
+</ul></div><div class="search_menu">
+  <div class="search_form">
+    <form action="https://www.rd.com" method="GET">
+      <input type="text" placeholder="search here..." id="search_box" name="s">
+      <input type="submit" value="SEARCH">
+    </form>
+  </div>
+</div>
+<div class="search_button"><a href="javascript:void(0);" class="fa fa-search"></a></div></nav>
+<!-- Ad Start:Header_Placement -->
+<div class="before-content-ad-wrapper">
+<div id='div-gpt-ad-1370019314148-01' style='display:block; margin: 0 auto;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-01'); });
+</script>
+</div>
+</div>
+<!-- Ad End:Header_Placement -->
+<div class="site-inner"><div class="content-sidebar-wrap"><header class="entry-header"><div class="hero-section" style="background-image: url(https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-1024x683.jpg);"><div class="hero-title-container"><h1 class="entry-title">Think You Know What &#8220;Alpha Male&#8221; Means? These Wolves Will Prove You Wrong</h1> 
+<div class="rd-article-author"><div class="entry-meta"><span class="byline">By <span><a href="https://www.rd.com/author/carl-safina/" title="Posts by Carl Safina" class="author url fn" rel="author">Carl Safina</a></span></span><span class="byline source"> from <em>New York Times</em> </span></div></div></div></div><div class="hero-spacer"></div></header>			<div class="rd-article-dek">
+				<h4>The wolves of Yellowstone have some surprising lessons on being a man.</h4>
+			</div>
+			<main class="content" id="genesis-content"><article class="post-232921 post type-post status-publish format-standard has-post-thumbnail category-relationships tag-animals tag-relationship-advice source-new-york-times mag_issue_date-december-2016 tmbi_first_associated-rd entry"><div class="rdu-sharing social-sharing post"><div class="addthis_toolbox addthis_default_style addthis_32x32_style"><a data-href="https://www.rd.com/advice/relationships/alpha-male-wolves/" data-analytics-metrics='{"link_name":"facebook","link_module":"social share","link_pos":"left sticky nav"}' class="addthis_button_facebook" addthis:media="https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A.jpg"></a><a data-href="https://www.rd.com/advice/relationships/alpha-male-wolves/" data-analytics-metrics='{"link_name":"twitter","link_module":"social share","link_pos":"left sticky nav"}' class="addthis_button_twitter" addthis:media="https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A.jpg"></a><a data-href="https://www.rd.com/advice/relationships/alpha-male-wolves/" data-analytics-metrics='{"link_name":"email","link_module":"social share","link_pos":"left sticky nav"}' class="addthis_button_email"></a><a data-href="https://www.rd.com/advice/relationships/alpha-male-wolves/" data-analytics-metrics='{"link_name":"compact","link_module":"social share","link_pos":"left sticky nav"}' class="addthis_button_compact custom custom__compact"></a></div></div><div class="entry-content"><p><img class="size-large wp-image-233124 alignnone" src="https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-1024x683.jpg" alt="dec-jan-2017-inner-wolf-alpha-male-opener-US161205A" width="640" height="427" srcset="https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-1024x683.jpg 1024w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-768x512.jpg 768w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-760x506.jpg 760w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-opener-US161205A-15x10.jpg 15w" sizes="(max-width: 640px) 100vw, 640px" /><span class="credits-overlay"><span class="image-credit">Tim Flach/Getty Images</span></span></p>
+<p>If you watch wolves, It’s hard to escape the conclusion that perhaps no two species are more alike behaviorally than wolves and humans. Living as we do in families, we can easily recognize the social structures and status quests in wolf packs. No wonder Native Americans recognized in wolves a sibling spirit. And no wonder human males often face pressure to measure up as “alpha” males—to “wolf up,” as it were. The term <em>alpha male</em> connotes a man who at every moment demonstrates that he’s in control in the home and who away from home can become snarling and aggressive.</p>
+<p>This alpha male stereotype comes from a misunderstanding of the real thing.</p>
+<p>By observing wolves in free-living packs in Yellowstone National Park, I’ve seen that the leadership of the ranking male is not forced, not domineering, and not aggressive to those on his team.</p>
+<p>“The main characteristic of an alpha male wolf,” the veteran wolf researcher Rick McIntyre told me as we were watching gray wolves, “is a quiet confidence, quiet self-assurance. You know what you need to do; you know what’s best for your pack. You lead by example. You’re very comfortable with that. You have a calming effect.”</p>
+<p>The point is, alpha males are not aggressive. They don’t need to be. “Think of an emotionally secure man or a great champion. Whatever he needed to prove is already proven,” he said.</p>
+<p>There is an evolutionary logic to it.</p>
+<p>“Imagine two wolf packs, or two human tribes,” McIntyre said. “Which is more likely to survive and reproduce: the one whose members are more cooperative, more sharing, less violent with one another, or the group whose members are beating each other up and competing with one another?”</p>
+<p>Thus, an alpha male may be a major player in a successful hunt, but after the takedown of the prey, he may step away and sleep until his pack has eaten and is full.</p>
+<p><img class="aligncenter size-large wp-image-233125" src="https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-1024x684.jpg" alt="dec-jan-2017-inner-wolf-alpha-male-US161205B" width="640" height="428" srcset="https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-1024x684.jpg 1024w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-300x200.jpg 300w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-768x513.jpg 768w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-767x514.jpg 767w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-600x400.jpg 600w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-380x254.jpg 380w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-384x258.jpg 384w, https://www.rd.com/wp-content/uploads/2016/11/dec-jan-2017-inner-wolf-alpha-male-US161205B-15x10.jpg 15w" sizes="(max-width: 640px) 100vw, 640px" /><span class="credits-overlay"><span class="image-credit">Courtesy Doug Smith/National Park Service</span></span></p>
+<p>McIntyre has spent 20 years watching and studying wolves in Yellowstone for the National Park Service. He rises early, uses radio telemetry to pinpoint the location of a pack via a radio-collared pack member, then heads out with his spotting scope to observe the animals, keeping careful notes of their activities.</p>
+<p>In all that time, he has rarely seen an alpha male act aggressively toward the pack’s other members. They are his family—his mate, offspring (both biological and adopted), and maybe a sibling.</p>
+<p>This does not mean that alpha males are not tough when they need to be. One famous wolf in Yellowstone whose radio collar number, 21, became his name, was considered a “super wolf” by the people who closely observed the arc of his life. He was fierce in defense of family and apparently never lost a fight with a rival pack. Yet within his own pack, one of his favorite things was to wrestle with little pups.</p>
+<p>“And what he really loved to do was to pretend to lose. He just got a huge kick out of it,” McIntyre said.</p><p class="continues-below">Content continues below ad</p><div class="ad-wrapper text-center adunit-lazy" id="rd-in-artcile-ad-13"></div>
+<p>One year, a pup was a bit sickly. The other pups seemed to be afraid of him and wouldn’t play with him. Once, after delivering food for the small pups, 21 stood looking around for something. Soon he started wagging his tail. He’d been looking for the sickly little pup, and he went over just to hang out with him for a while.</p>
+<p>Of all McIntyre’s stories about the super wolf, that’s his favorite. Strength impresses us. But kindness is what we remember best.</p>
+<p>Biologists used to consider the alpha male the undisputed boss. But now they recognize two hierarchies at work in wolf packs—one for the males, the other for the females.</p>
+<p>[pullquote] Strength impresses us. But kindness is what we remember best. [/pullquote]</p>
+<p>Doug Smith, the biologist who is the project leader for the Yellowstone Gray Wolf Restoration Project, said the females “do most of the decision making” for the pack, including where to travel, when to rest, and when to hunt. The matriarch’s personality can set the tone for the whole pack, Smith said.</p>
+<p>Or, as McIntyre put it: “It’s the alpha female who really runs the show.”</p>
+<p>Clearly, our alpha male stereotype could use a corrective makeover. Men can learn a thing or two from real wolves: less snarl, more quiet confidence, leading by example, faithful devotion in the care and defense of families, respect for females, and a sharing of responsibilities. That’s really what wolfing up should mean.</p>
+<p><em>Carl Safina is the founder of the Safina Center at Stony Brook University and the author of the book </em>Beyond Words: What Animals Think and Feel.</p><div class="spu-placeholder" style="display:none"></div></div><footer class="entry-footer"><div class="entry-copyright"><span class="byline source"><em>New York Times</em> (July 5, 2015), Copyright © 2015 by The New York Times Co., nytimes.com.</span></div><p class="entry-meta"><span class="entry-categories">More: <a href="https://www.rd.com/advice/relationships/" rel="category tag">Relationships</a></span> <span class="entry-tags"><a href="https://www.rd.com/animals/" rel="tag">Animals</a>, <a href="https://www.rd.com/relationship-advice/" rel="tag">Relationship Advice</a></span></p></footer></article>		<div id='newsletter-form-container'>
+			<div id='newsletter-container'>
+				<div class='container container__advice'>
+					<div class='row'>
+						<div class='form-wrapper'>
+							<form id='nsf' class='form-inline' role='form'>
+								<fieldset>
+									<p class="header">Become more interesting every week!</p><p class="title">The Reader&#39;s Digest &#34;Read Up&#34; Newsletter</p>									<div class="policy-content">We will use your email address to send you this newsletter. For more information please read our <a href='https://www.trustedmediabrands.com/privacy-policy/' target='_blank'>privacy policy.</a></div>
+									<div class='form-group'>
+										<div class='input-group input-group-default'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-envelope'></span>
+											</span>
+											<label class='sr-only' for='nl-email'>
+												Email address
+											</label>
+											<input
+												type='email'
+												name='email'
+												class='form-control'
+												id='nl-email'
+												placeholder="Email" required />
+											<input
+												name='form_id'
+												type='hidden'
+												value='99999' />
+											<input
+												name='source_url'
+												type='hidden'
+												value='https://www.rd.com/advice/relationships/alpha-male-wolves/' />
+											<input
+												name='newsletter_id'
+												type='hidden'
+												value='6' />
+											<input
+												name='offer_id'
+												type='hidden'
+												value='10' />
+											<input
+												name='action'
+												type='hidden'
+												value='newsletter_signup_form' />
+											<input type="hidden" id="nsf_nonce" name="nsf_nonce" value="80a0d93e49" /><input type="hidden" name="_wp_http_referer" value="/advice/relationships/alpha-male-wolves/" />										</div>
+									</div>
+									<button data-metrics='{"link_name":"sign up","nl_name":"","nl_signup_event":"true","link_module":"newsletter signup","link_pos":"body of content","page_template":"newsletter sign up widget"}'
+										formmethod=post
+										type="submit"
+										class='btn btn-signup'>Sign Up</button>
+									<img style="display: none"
+										 class='nsf-ajax'
+										 src='https://www.rd.com/wp-content/plugins/rd-newsletters/images/loading.gif'
+										 alt='Sending Message'>
+
+								</fieldset>
+							</form>
+						</div>
+						<div class='formmessage'><p></p></div>
+					</div>
+				</div>
+			</div>
+		</div>
+				<div id="confirmation-msg-container" style="display: none">
+			<div id="confirmation-container">
+				<div class="container">
+					<div class="row">
+						<div class="form-wrapper">
+							<div class="section-signup-confirmation">
+								<div class="left">
+									<p class="header">Thanks! You're on our list.</p>
+									<p class="title">And your life&#39;s about to get more interesting.</p>								</div>
+								<div class="right">
+									<div class="facebook">
+										<a class="nbs-social-facebook" target="_blank" href="https://www.facebook.com/ReadersDigest"></a>
+										<a target="_blank" href="https://www.facebook.com/ReadersDigest"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+									</div>
+									<div class="twitter">
+										<a target="_blank" class="nbs-social-twitter" href="https://www.twitter.com/ReadersDigest"></a>
+										<a target="_blank" href="https://www.twitter.com/ReadersDigest" title =""><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="taboola-below-article-thumbnails"></div>
+</main><aside class="sidebar sidebar-primary widget-area" aria-label="Primary Sidebar" id="genesis-sidebar-primary"><div class="atf-rr-container"><div class="atf-sidebar"><div class="ad-wrapper"><div id='div-gpt-ad-1370019314148-02' style='display:block; margin: 0 auto;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-02'); });
+</script>
+</div>
+</div><div class="ad-wrapper"><div id='div-gpt-ad-1370019314148-03' style='display:block; margin: 0 auto;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-03'); });
+</script>
+</div>
+</div></div></div><div class="btf-rr-container"><div class="btf-sidebar"><div class="aside-recirc"><h2>Read These Next</h2><hr><ul><li><span class="recirc-category"><a data-analytics-metrics='{"link_name":"topic - Culture","link_module":"from - Culture","link_pos":"read these next"}' href="https://www.rd.com/culture/">Culture</a></span><h5><a data-analytics-metrics='{"link_name":"14 Mysteries of the Ocean Scientists Still Can&#8217;t Explain","link_module":"content recirculation","link_pos":"read these next"}' href="https://www.rd.com/culture/ocean-mysteries/1/">14 Mysteries of the Ocean Scientists Still Can&#8217;t Explain</a></h5></li><li><span class="recirc-category"><a data-analytics-metrics='{"link_name":"topic - Culture","link_module":"from - Culture","link_pos":"read these next"}' href="https://www.rd.com/culture/">Culture</a></span><h5><a data-analytics-metrics='{"link_name":"15 Adorable Animals You Didn\u2019t Even Know Existed","link_module":"content recirculation","link_pos":"read these next"}' href="https://www.rd.com/culture/cute-little-known-animals/1/">15 Adorable Animals You Didn’t Even Know Existed</a></h5></li><li><span class="recirc-category"><a data-analytics-metrics='{"link_name":"topic - Pets","link_module":"from - Pets","link_pos":"read these next"}' href="https://www.rd.com/advice/pets/">Pets</a></span><h5><a data-analytics-metrics='{"link_name":"The Most Common Health Problems in 14 Popular Dog Breeds","link_module":"content recirculation","link_pos":"read these next"}' href="https://www.rd.com/advice/pets/common-health-problems-dog-breeds/1/">The Most Common Health Problems in 14 Popular Dog Breeds</a></h5></li><li><span class="recirc-category"><a data-analytics-metrics='{"link_name":"topic - Pets","link_module":"from - Pets","link_pos":"read these next"}' href="https://www.rd.com/advice/pets/">Pets</a></span><h5><a data-analytics-metrics='{"link_name":"18 Best Dog Breeds for Kids","link_module":"content recirculation","link_pos":"read these next"}' href="https://www.rd.com/advice/pets/best-dog-breeds-for-kids/1/">18 Best Dog Breeds for Kids</a></h5></li><li><span class="recirc-category"><a data-analytics-metrics='{"link_name":"topic - Relationships","link_module":"from - Relationships","link_pos":"read these next"}' href="https://www.rd.com/advice/relationships/">Relationships</a></span><h5><a data-analytics-metrics='{"link_name":"32 Secrets Your Wedding Planner Won\u2019t Tell You","link_module":"content recirculation","link_pos":"read these next"}' href="https://www.rd.com/advice/relationships/13-things-your-wedding-planner-wont-tell-you/1/">32 Secrets Your Wedding Planner Won’t Tell You</a></h5></li></ul></div><div class="aside-recirc"><h2>Keep Reading</h2><hr><ul><li><span><a data-analytics-metrics='{"link_name":"topic - Inspiring Stories","link_module":"from - Inspiring Stories","link_pos":"more headlines"}' class="recirc-category" href="https://www.rd.com/true-stories/inspiring/">Inspiring Stories</a></span><h5><a data-analytics-metrics='{"link_name":"The Simple but Powerful Way This Social Worker Comforted a Grieving Widower","link_module":"content recirculation","link_pos":"keep reading"}' href="https://www.rd.com/true-stories/inspiring/simple-way-social-worker-comforted-widower/">The Simple but Powerful Way This Social Worker Comforted a Grieving Widower</a> </h5></li><li><span><a data-analytics-metrics='{"link_name":"topic - Relationships","link_module":"from - Relationships","link_pos":"more headlines"}' class="recirc-category" href="https://www.rd.com/advice/relationships/">Relationships</a></span><h5><a data-analytics-metrics='{"link_name":"35 Lessons I&#8217;ve Learned in 35 Years of Marriage","link_module":"content recirculation","link_pos":"keep reading"}' href="https://www.rd.com/advice/relationships/lessons-from-marriage/">35 Lessons I&#8217;ve Learned in 35 Years of Marriage</a> </h5></li><li><span><a data-analytics-metrics='{"link_name":"topic - Love Stories","link_module":"from - Love Stories","link_pos":"more headlines"}' class="recirc-category" href="https://www.rd.com/true-stories/love/">Love Stories</a></span><h5><a data-analytics-metrics='{"link_name":"My Dream Guy Broke My Heart\u2014and Allowed Me to Find the Love of My Life","link_module":"content recirculation","link_pos":"keep reading"}' href="https://www.rd.com/true-stories/love/he-broke-my-heart-and-i-found-love/">My Dream Guy Broke My Heart—and Allowed Me to Find the Love of My Life</a> </h5></li><li><span><a data-analytics-metrics='{"link_name":"topic - Relationships","link_module":"from - Relationships","link_pos":"more headlines"}' class="recirc-category" href="https://www.rd.com/advice/relationships/">Relationships</a></span><h5><a data-analytics-metrics='{"link_name":"The Heartbreaking Reason a 7-Year-Old Boy Won&#8217;t Call His Stepmother &#8220;Mom&#8221;","link_module":"content recirculation","link_pos":"keep reading"}' href="https://www.rd.com/advice/relationships/who-will-you-be-to-me/">The Heartbreaking Reason a 7-Year-Old Boy Won&#8217;t Call His Stepmother &#8220;Mom&#8221;</a> </h5></li><li><span><a data-analytics-metrics='{"link_name":"topic - Parenting","link_module":"from - Parenting","link_pos":"more headlines"}' class="recirc-category" href="https://www.rd.com/advice/parenting/">Parenting</a></span><h5><a data-analytics-metrics='{"link_name":"17 Forgotten Manners Every Parent Should Teach Their Child","link_module":"content recirculation","link_pos":"keep reading"}' href="https://www.rd.com/advice/parenting/manners-to-teach-children/">17 Forgotten Manners Every Parent Should Teach Their Child</a> </h5></li><li><span><a data-analytics-metrics='{"link_name":"topic - Inspiring Stories","link_module":"from - Inspiring Stories","link_pos":"more headlines"}' class="recirc-category" href="https://www.rd.com/true-stories/inspiring/">Inspiring Stories</a></span><h5><a data-analytics-metrics='{"link_name":"I Helped a Stranger in Dire Need\u2014But It Was My Life He Ended Up Saving","link_module":"content recirculation","link_pos":"keep reading"}' href="https://www.rd.com/true-stories/inspiring/helped-man-serious-injury-saved-life/">I Helped a Stranger in Dire Need—But It Was My Life He Ended Up Saving</a> </h5></li></ul></div></div></div></aside></div><div class="btf-container"><div class="content"><div class="ad-wrapper"><div id='div-gpt-ad-1370019314148-08' style='display:block; margin: 0 auto;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-08'); });
+</script>
+</div>
+</div><h2 class="video-title category--primary--title">Video</h2><div class="brightcove"><div class="brightcove-container"><div class="dmplayer" id="dmpl5b1572a61fe77"></div></div></div><div class="more-about-category"><div class="in-content-heading"><h2>More About Relationships</h2><hr></div><article><header><a class="loop-image" data-analytics-metrics='{"link_name":"9 Science-Backed Tricks to Boost Your Self-Confidence","link_module":"content recirculation","link_pos":"more about"}' href="https://www.rd.com/advice/relationships/how-to-be-confident/"><img src="https://www.rd.com/wp-content/uploads/2016/05/09-ways-boost-confidence-smell-good-deodarant.jpg" alt="ways boost confidence smell good deodarant"></a><div class="loop-content"><span class="category"><a data-analytics-metrics='{"link_name":"topic - Relationships","link_module":"from - Relationships","link_pos":"more about"}' href="https://www.rd.com/advice/relationships/">Relationships</a></span><a class="loop-content-link" data-analytics-metrics='{"link_name":"9 Science-Backed Tricks to Boost Your Self-Confidence","link_module":"content recirculation","link_pos":"more about"}' href="https://www.rd.com/advice/relationships/how-to-be-confident/"><h3>9 Science-Backed Tricks to Boost Your Self-Confidence</h3><div class="loop-content-excerpt">We will not tell you to 'fake it til' you make it,' but we will give you advice that boosts your self-confidence—honest.</div></a></div></header></article><article><header><a class="loop-image" data-analytics-metrics='{"link_name":"20 Dads Share the Sweetest, Most Heartwarming Father&#8217;s Day Gifts They&#8217;ve Ever Received","link_module":"content recirculation","link_pos":"more about"}' href="https://www.rd.com/culture/best-fathers-day-gifts/"><img src="https://www.rd.com/wp-content/uploads/2017/06/00_Dads-On-the-Best-Fathers-Day-Gift-They-Received_FT.jpg" alt="dads"></a><div class="loop-content"><span class="category"><a data-analytics-metrics='{"link_name":"topic - Culture","link_module":"from - Culture","link_pos":"more about"}' href="https://www.rd.com/culture/">Culture</a></span><a class="loop-content-link" data-analytics-metrics='{"link_name":"20 Dads Share the Sweetest, Most Heartwarming Father&#8217;s Day Gifts They&#8217;ve Ever Received","link_module":"content recirculation","link_pos":"more about"}' href="https://www.rd.com/culture/best-fathers-day-gifts/"><h3>20 Dads Share the Sweetest, Most Heartwarming Father&#8217;s Day Gifts They&#8217;ve Ever Received</h3><div class="loop-content-excerpt">The stories on this list made us officially overrule our plan to get dad a tie he'll hardly wear. </div></a></div></header></article><article><header><a class="loop-image" data-analytics-metrics='{"link_name":"32 Secrets Your Wedding Planner Won\u2019t Tell You","link_module":"content recirculation","link_pos":"more about"}' href="https://www.rd.com/advice/relationships/13-things-your-wedding-planner-wont-tell-you/"><img src="https://www.rd.com/wp-content/uploads/2011/07/13-things-wedding-planner-b-hf.jpg" alt="wedding planner secrets"></a><div class="loop-content"><span class="category"><a data-analytics-metrics='{"link_name":"topic - Relationships","link_module":"from - Relationships","link_pos":"more about"}' href="https://www.rd.com/advice/relationships/">Relationships</a></span><a class="loop-content-link" data-analytics-metrics='{"link_name":"32 Secrets Your Wedding Planner Won\u2019t Tell You","link_module":"content recirculation","link_pos":"more about"}' href="https://www.rd.com/advice/relationships/13-things-your-wedding-planner-wont-tell-you/"><h3>32 Secrets Your Wedding Planner Won’t Tell You</h3><div class="loop-content-excerpt">Wedding planners and pros from across the country reveal the messy side of making your wedding day unforgettable. Here's what they wish brides knew.</div></a></div></header></article><article><header><a class="loop-image" data-analytics-metrics='{"link_name":"The Simple but Powerful Way This Social Worker Comforted a Grieving Widower","link_module":"content recirculation","link_pos":"more about"}' href="https://www.rd.com/true-stories/inspiring/simple-way-social-worker-comforted-widower/"><img src="https://www.rd.com/wp-content/uploads/2018/05/June-18-VV-WOLI-US180641A-ShutterstockHelena-Lansky.jpg" alt="Double Exposure"></a><div class="loop-content"><span class="category"><a data-analytics-metrics='{"link_name":"topic - Inspiring Stories","link_module":"from - Inspiring Stories","link_pos":"more about"}' href="https://www.rd.com/true-stories/inspiring/">Inspiring Stories</a></span><a class="loop-content-link" data-analytics-metrics='{"link_name":"The Simple but Powerful Way This Social Worker Comforted a Grieving Widower","link_module":"content recirculation","link_pos":"more about"}' href="https://www.rd.com/true-stories/inspiring/simple-way-social-worker-comforted-widower/"><h3>The Simple but Powerful Way This Social Worker Comforted a Grieving Widower</h3><div class="loop-content-excerpt">As he helps a shattered man face his wife’s death,  the author is inspired by an old message.</div></a></div></header></article></div></div></div></div><div class="footer-widgets" id="genesis-footer-widgets"><div class="wrap"><div class="footer-widgets-1 widget-area"><section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><a href="/" class="footer-logo"></a></div></div></section>
+<section id="nav_menu-2" class="widget widget_nav_menu"><div class="widget-wrap"><div class="menu-footer-left-menu-container"><ul id="menu-footer-left-menu-1" class="menu"><li id="menu-item-397190" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"LifeRich Publishing","link_module":"footer","link_pos":"footer"}' href="https://www.liferichpublishing.com/">LifeRich Publishing</a></li>
+<li id="menu-item-463898" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"One Main Financials Services","link_module":"footer","link_pos":"footer"}' href="https://www.onemainfinancial.com/partners/360b65fa?CSCALD=18102&amp;TRKCD=homepage&amp;utm_medium=Affinity">One Main Financials Services</a></li>
+<li id="menu-item-397191" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Media Kit","link_module":"footer","link_pos":"footer"}' href="https://www.rd.com/media-kit">Media Kit</a></li>
+<li id="menu-item-397194" class="menu-item menu-item-type-custom menu-item-object-custom"><a data-analytics-metrics='{"link_name":"Contact Us","link_module":"footer","link_pos":"footer"}' href="https://www.rd.com/contact-us">Contact Us</a></li>
+<li id="menu-item-397195" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"Customer Care","link_module":"footer","link_pos":"footer"}' href="https://w1.buysub.com/pubs/RD/RDA/index.jsp?cds_page_id=69616&amp;cds_mag_code=RDA">Customer Care</a></li>
+</ul></div></div></section>
+</div><div class="footer-widgets-2 widget-area"><section id="nav_menu-4" class="widget widget_nav_menu"><div class="widget-wrap"><div class="menu-footer-social-container"><ul id="menu-footer-social-1" class="menu"><li id="menu-item-397208" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"facebook","link_module":"follow us","link_pos":"social"}' href="https://www.facebook.com/ReadersDigest"><i class="fa fa-facebook-square"></i><span>Facebook</span></a></li>
+<li id="menu-item-397211" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"twitter","link_module":"follow us","link_pos":"social"}' href="https://twitter.com/readersdigest"><i class="fa fa-twitter"></i><span>Twitter</span></a></li>
+<li id="menu-item-397212" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"pinterest","link_module":"follow us","link_pos":"social"}' href="https://www.pinterest.com/readersdigest/"><i class="fa fa-pinterest"></i><span>Pinterest</span></a></li>
+<li id="menu-item-397215" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"youtube","link_module":"follow us","link_pos":"social"}' href="https://www.youtube.com/readersdigest"><i class="fa fa-youtube"></i><span>YouTube</span></a></li>
+<li id="menu-item-397217" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"instagram","link_module":"follow us","link_pos":"social"}' href="https://instagram.com/readersdigest"><i class="fa fa-instagram"></i><span>Instagram</span></a></li>
+<li id="menu-item-397221" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" data-analytics-metrics='{"link_name":"newsletter signup","link_module":"follow us","link_pos":"social"}' href="https://www.rd.com/newsletters"><i class="fa fa-envelope"></i><span>Newsletters</span></a></li>
+</ul></div></div></section>
+</div><div class="footer-widgets-3 widget-area"><section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h3 class="widgettitle widget-title">Subscribe to Print:</h3>
+<div class="textwidget custom-html-widget"><div class="footer-text-container"><span class="footer-lead">Get our Best Deal!</span>
+<p class="footer-copy">Get a print subscription to Reader's Digest and instantly enjoy free digital access on any device.</p>
+
+</div>
+<div class="footer-cover" style="background-image:url(https://cdn1.tmbi.com/MagCovers/RD/RDMagCover_330X450_forSEM.jpg)"></div>
+
+<div class="footer-form"><form id="" class="footer-form" action="https://w1.buysub.com/servlet/PrePopGateway" method="post" target="_blank"><input id="cds_mag_code" name="cds_mag_code" type="hidden" value="RDA" />
+<input id="cds_page_id" name="cds_page_id" type="hidden" value="212947" />
+<input id="cds_response_key" name="cds_response_key" type="hidden" value="IVGMDU101" />
+<input name="cds_country" type="hidden" value="United States" />
+
+<label>Full Name</label>
+
+<input maxlength="24" name="cds_name" size="20" type="text" value="" placeholder="First and Last" />
+<label>Email</label>
+
+<input maxlength="50" name="cds_email" size="20" type="text" value="" placeholder="you@example.com" />
+<input name="send" type="submit" value="Subscribe &amp; Checkout" data-analytics-metrics="{&quot;link_name&quot; :&quot;subscribe &amp; checkout&quot;,&quot;link_module&quot; :&quot;subscribe footer&quot;,&quot;page_template&quot; :&quot;subscribe &amp; checkout&quot;}" />
+
+</form></div>
+<p class="footer-next-info">Next: Provide address &amp; payment</p></div></div></section>
+</div></div></div><footer class="site-footer"><div class="wrap"><p><div class="creds">&copy;2018 TRUSTED MEDIA BRANDS, INC<a data-analytics-metrics='{"link_name":"terms & conditions","link_module":"footer","page_template":"terms & conditions"}' href="https://www.rd.com/terms-of-use/" target="_blank" rel="noopener">Terms & Conditions</a><a class="red-text" data-analytics-metrics='{"link_name":"your privacy policy","link_module":"footer","page_template":"your privacy policy"}' href="https://www.trustedmediabrands.com/privacy-policy/" target="_blank" rel="noopener" >NEW - Privacy Policy</a><a data-analytics-metrics='{"link_name":"your ca privacy rights","link_module":"footer","page_template":"your ca privacy rights"}' href="https://www.trustedmediabrands.com/privacy-policy/#california" target="_blank" rel="noopener">Your CA Privacy Rights</a><a data-analytics-metrics='{"link_name":"about ads","link_module":"footer","page_template":"about ads"}' href="https://www.trustedmediabrands.com/privacy-policy/#advertising" target="_blank" rel="noopener">About Ads</a></div></p>
+	<div class="site-footer">
+		<div class="wrap tmb-sites">
+			<span class="our-sites">Our Websites:</span> <span class="rd-link">Reader's Digest</span> <span class="pipe">|</span>
+			<a data-analytics-metrics='{"link_name":"Taste of Home","link_module":"footer"}' href="https://www.tasteofhome.com/" target="_blank" rel="noopener">Taste of Home</a><span class="pipe">|</span><a data-analytics-metrics='{"link_name":"The Family Handyman","link_module":"footer"}' href="https://www.familyhandyman.com/" target="_blank" rel="noopener">The Family Handyman</a><span class="pipe">|</span><a data-analytics-metrics='{"link_name":"Construction Pro Tips","link_module":"footer"}' href="https://www.constructionprotips.com/" target="_blank" rel="noopener">Construction Pro Tips</a>		</div>
+	</div>
+	</div></footer>
+<!-- Ad Start:After_Footer -->
+<div class="footer-ad-wrapper">
+<div id='div-gpt-ad-1370019314148-09' style='display:block; margin: 0 auto;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-09'); });
+</script>
+</div>
+</div>
+<!-- Ad End:After_Footer -->
+
+<!-- Ad Start:After_Footer -->
+<div class="footer-ad-wrapper">
+<div id='div-gpt-ad-1370019314148-10' style='display:block; margin: 0 auto;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-10'); });
+</script>
+</div>
+</div>
+<!-- Ad End:After_Footer -->
+
+<!-- Ad Start:After_Footer -->
+<div class="footer-ad-wrapper">
+<div id='div-gpt-ad-1370019314148-11' style='display:block; margin: 0 auto;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1370019314148-11'); });
+</script>
+</div>
+</div>
+<!-- Ad End:After_Footer -->
+</div><link rel="dns-prefetch" href="//ads.intentiq.com" />
+<link rel="dns-prefetch" href="//api.intentiq.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//cdn.taboola.com" />
+<link rel="dns-prefetch" href="//netstorage.taboola.com" />
+<link rel="dns-prefetch" href="//trc.taboola.com" />
+<link rel="dns-prefetch" href="//completion.amazon.com" />
+<link rel="dns-prefetch" href="//g-ecx.images-amazon.com" />
+<link rel="dns-prefetch" href="//s3.amazonaws.com" />
+<link rel="dns-prefetch" href="//imasdk.googleapis.com" />
+<link rel="dns-prefetch" href="//s.amazon-adsystem.com" />
+<link rel="dns-prefetch" href="//c.amazon-adsystem.com" />
+<link rel="dns-prefetch" href="//api.bounceexchange.com" />
+<link rel="dns-prefetch" href="//tags.crwdcntrl.net" />
+<link rel="dns-prefetch" href="//ad.crwdcntrl.net" />
+<link rel="dns-prefetch" href="//static.parsely.com" />
+<link rel="dns-prefetch" href="//m.addthis.com" />
+<link rel="dns-prefetch" href="//s7.addthis.com" />
+<link rel="dns-prefetch" href="//player.mediabong.net" />
+<link rel="dns-prefetch" href="//api.dmcdn.net" />
+<link rel="dns-prefetch" href="//acsalemedia.com" />
+<link rel="dns-prefetch" href="//dsum-sec.casalemedia.com" />
+<link rel="dns-prefetch" href="//ssum.acsalemedia.com" />
+<link rel="dns-prefetch" href="//oo.moatads.com" />
+<link rel="dns-prefetch" href="//geo.moatads.com" />
+<link rel="dns-prefetch" href="//mb.acsalemedia.com" />
+<link rel="dns-prefetch" href="//adserver-us.adtech.advertising.com" />
+<link rel="dns-prefetch" href="//ads.rubiconproject.com" />
+<link rel="dns-prefetch" href="//apex.go.sonobi.com" />
+<link rel="dns-prefetch" href="//go.sonobi.com" />
+<link rel="dns-prefetch" href="//mtrx.go.sonobi.com" />
+<link rel="dns-prefetch" href="//ib.adnxs.com" />
+<link rel="dns-prefetch" href="//trustedmediabrands.sc.omtrdc.net" />
+<img style="display:none;width:1px;" src="https://secure.leadback.advertising.com/adcedge/lb?site=695501&betr=readersdigest=[+]visit[720],ltlb[8760]" width="1" height="1" border="0">
+<img style="display:none;width:1px;border-style:none;" height="1" width="1" alt="" src="//insight.adsrvr.org/track/evnt/?adv=mgekeuu&ct=0:mowvn17k&fmt=3"/>
+<script type="text/javascript" src="https://tags.crwdcntrl.net/c/10234/cc.js?ns=_cc10234" id="LOTCC_10234"></script>
+<script type="text/javascript" language="javascript">_cc10234.bcp();</script>
+
+<!-- START Parse.ly Include: Standard -->
+<div id="parsely-root" style="display: none">
+<span id="parsely-cfg" data-parsely-site="rd.com"></span>
+</div>
+<script type="text/javascript">
+(function(s, p, d) {
+var h=d.location.protocol, i=p+"-"+s,
+e=d.getElementById(i), r=d.getElementById(p+"-root"),
+u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+:"static."+p+".com";
+if (e) return;
+e = d.createElement(s); e.id = i; e.async = true;
+e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+})("script", "parsely", document);
+</script>
+<!-- END Parse.ly Include: Standard -->
+<noscript>
+<p>
+<img src="https://sb.scorecardresearch.com/p?c1=2&c2=6034767&cv=2.0&cj=1" height="1" width="1" alt="*">
+</p>
+</noscript>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-lotame/js/lotame-tags.js?ver=1.6'></script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/cookie-controller/js/md5.js?ver=1.2'></script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/cookie-controller/js/sha1.js?ver=1.2'></script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/mu-plugins/cookie-controller/js/sha256.js?ver=1.2'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-ad-pixel-controller/js/rocketfuel-ads.js?ver=1.8'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-ad-pixel-controller/js/dpm-tags.js?ver=1.3'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-adobe-dtm/js/adobe_dtm.js?ver=1.3.6'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-alc-integration/js/alc.js?ver=1.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-alc-integration/js/alc-newsletter-script.js?ver=1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rd_bx = {"script_id":"948"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-bx/js/smart-tag.js?ver=1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var NSF = {"ajaxurl":"https:\/\/www.rd.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-newsletters/js/newsletter-signup.js?ver=3.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rd_taboola = [{"mode":"thumbnails-g","container":"taboola-below-article-thumbnails","placement":"Below Article Thumbnails","target_type":"mix"},{"mode":"hybrid-text-links-g","container":"taboola-below-article-text-links","placement":"Below Article Text Links","target_type":"mix"},{"mode":"thumbnails-h","container":"taboola-native-gallery-thumbnails","placement":"Native Gallery Thumbnails","target_type":"mix"}];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-taboola/js/rd-taboola-article.js?ver=0.2.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-comscore-mmx/js/comscore-mmx.js?ver=1.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tmb_liveramp = {"pid":"8350"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/tmbi-liveramp/js/liveramp.js?ver=1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.5'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=2.4.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rdusChildL10n = {"mainMenu":"","subMenu":"Menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/rdus-child/js/responsive-menu.js?ver=1.0.2'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/themes/rdus-child/js/rdus-custom.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/elasticpress/features/facets/assets/js/facets.min.js?ver=2.5.2'></script>
+<script async type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js?ver=1.2.2#pubid=ra-55a471fa3111e294'></script>
+<script async type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-mobile-content-expander/js/mobile-content-expander.js?ver=1.1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var spuvar = {"is_admin":"","l18n":{"wait":"Please wait","seconds":"seconds ","name_error":"Please enter a valid name","email_error":"Please enter a valid email"},"disable_style":"","safe_mode":"","ajax_mode":"","site_url":"https:\/\/www.rd.com\/","ajax_mode_url":"https:\/\/www.rd.com\/?spu_action=spu_load&lang=","ajax_url":"https:\/\/www.rd.com\/wp-admin\/admin-ajax.php","pid":"232921","is_front_page":"","is_category":"","is_archive":"","is_search":"","seconds_confirmation_close":"5","dsampling":"1","dsamplingrate":"1000","disable_stats":""};
+var spuvar_social = [""];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/popups-premium/public/assets/js/min/public-min.js?ver=1.6'></script>
+<script type='text/javascript' src='https://www.rd.com/wp-includes/js/wp-embed.min.js?ver=4.9.6'></script>
+<script type='text/javascript' src='https://api.dmcdn.net/all.js?ver=4.9.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rd_dm_videos = [{"player_id":"dmpl5b1572a61fe77","video_id":"x4x6ih","is_playlist":true,"videos":["x5hjy5w","x5nu14n","x5nujcp"]}];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rd.com/wp-content/plugins/rd-video/inc/js/dm-player.js?ver=1.0.6'></script>
+
+<script type="text/javascript">
+if(typeof _satellite !== "undefined"){
+  _satellite.pageBottom()
+}
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bab150296b","applicationID":"51130036","transactionName":"M1BUY0YAC0ZWUxVaXQoad1RACApbGEMIXVUIUA==","queueTime":0,"applicationTime":685,"atts":"HxdXFQ4aGEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>

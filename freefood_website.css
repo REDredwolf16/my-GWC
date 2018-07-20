@@ -1,0 +1,75 @@
+header{
+  background-color: black;
+}
+header::after{
+  content:'';
+  display: table;
+  clear:both;
+}
+/* This is the logo for Free Food */
+.free{
+  color:#71f045;
+  font-size: 200px;
+  font-family: 'Satisfy', cursive;
+  padding-top: 10px;
+}
+.food{
+  color:yellow;
+  font-size: 200px;
+  font-family: 'Poiret One', cursive;
+  padding-top: 10px;
+
+}
+/* This is the background image. */
+body{
+    background-image:
+    url("wood.jpeg");
+  }
+
+/* hexa color for the green is #71f045 */
+
+/* hexa color for the yellow #ffc300 */
+
+/* This is the navigation bar. */
+/* .topnav {
+    overflow: hidden;
+    background-color: #333;
+} */
+
+/* Navbar links */
+/* .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+} */
+
+/* Links - change color on hover */
+/* .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+} */
+
+nav{
+  float:right;
+}
+nav ul {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+
+nav li{
+  display: inline-block;
+  margin-left: 200px;
+  padding-top: 25px;
+}
+
+
+nav a{
+  color:#71f045;
+  text-decoration: none;
+  text-transform: uppercase;
+}

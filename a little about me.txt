@@ -1,0 +1,22 @@
+Facts about myself
+
+-I like to read
+-I am a singer and a visual artist
+-I have 3 siblings.
+-I am in only female in my household (other than my mother)
+-I like to listen to all types of music
+-I want to go to Italy
+-My favorite animal is a wolf
+- I play the guitar and the piano
+
+
+
+What will it look like?
+ a sprite wil appear and say my name
+)  the main sprite will say "I have 3 siblings"
+) three little sprites will appear for about 5 seconds then disappear
+) a mic will appear and the main sprite will say " I am a vocal artist"
+)an easel will appear and the main sprite will say " I am also a visual artist"
+) headphones will appear and the sprite will say " I listen adn enjoy all types of music"
+)a guitar and piano will appear and the sprite will say "I play guitar and piano"
+8)A wolf will appear and the sprite will say "My favorite animal is a wolf"
